@@ -19,13 +19,15 @@ export async function getStaticPaths() {
 }
 
 export default function Post({ postData }) {
-    return (
-      <Layout>
-        {postData.title}
-        <br />
-        {postData.id}
-        <br />
-        {postData.date}
-      </Layout>
-    );
-  }
+  return (
+    <Layout>
+      {postData.title}
+      <br />
+      {postData.id}
+      <br />
+      {postData.date}
+      <br />
+      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+    </Layout>
+  );
+}
